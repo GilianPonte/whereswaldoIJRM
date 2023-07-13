@@ -2,6 +2,9 @@
 
 This repository provides the code for our paper's results.
 
+### Where's Waldo effect
+- privacyrisk.R creates the Where's Waldo effect Figure in section _The Where's Waldo effect_.
+
 ### Churn application
 - dp_gan.py describes the fully connected GAN.
 - predictions_resample.py describes section _Predicting real (out-of-sample) churn behavior._ and _Disparate impact of privacy protection on sensitive groups._
