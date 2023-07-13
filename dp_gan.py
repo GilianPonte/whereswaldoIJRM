@@ -56,7 +56,7 @@ from keras.models import Sequential, Model
 from keras import losses
 import keras.backend as K
 
-drive.mount('/content/drive')
+drive.mount('//drive')
 
 random.seed(1)
 np.random.seed(1)
@@ -205,7 +205,7 @@ class GAN():
 
             if epoch % sample_interval == 0:
               # Plot the progress and save model
-              self.generator.save("/content/drive/MyDrive/Research/Project 1/insurance_data_without_privacy_8.h5")
+              self.generator.save("model.h5")
               print ("%d [D loss: %f, acc.: %.2f%%] [G loss: %f, corr: %f, MAPD: %f, MSE: %f, MAE: %f]" % (epoch, d_loss[0], 100*d_loss[1], g_loss, corr, MAPD, MSE, MAE))
 
 
@@ -242,10 +242,10 @@ class GAN():
               MAPD_collect = np.append(MAPD_collect, MAPD)
               MSE_collect = np.append(MSE_collect, MSE)
               MAE_collect = np.append(MAE_collect, MAE)
-              pd.DataFrame(correlations).to_csv("/content/drive/MyDrive/Research/Project 1/correlations_8.csv", index = False)
-              pd.DataFrame(MAPD_collect).to_csv("/content/drive/MyDrive/Research/Project 1/MAPD_collect_8.csv", index = False)
-              pd.DataFrame(MSE_collect).to_csv("/content/drive/MyDrive/Research/Project 1/MSE_collect_8.csv", index = False)
-              pd.DataFrame(MAE_collect).to_csv("/content/drive/MyDrive/Research/Project 1/MAE_collect_8.csv", index = False)
+              pd.DataFrame(correlations).to_csv("cor.csv", index = False)
+              pd.DataFrame(MAPD_collect).to_csv("MAPD.csv", index = False)
+              pd.DataFrame(MSE_collect).to_csv("MSE.csv", index = False)
+              pd.DataFrame(MAE_collect).to_csv("MAE.csv", index = False)
 
 if __name__ == '__main__':
   random.seed(1)
@@ -256,7 +256,7 @@ if __name__ == '__main__':
 
 import numpy as np
 from keras.models import load_model
-generator = load_model('/content/drive/MyDrive/Research/Project 1/insurance_data_without_privacy_8.h5')
+generator = load_model('model.h5')
 generated_data = []
 random.seed(1)
 np.random.seed(1)
@@ -268,7 +268,7 @@ gen_imgs = gen_imgs.reshape(1262423, 9)
 gen_imgs = pd.DataFrame(gen_imgs)
 gen_imgs = scaler0.inverse_transform(gen_imgs)
 gen_imgs = pd.DataFrame(gen_imgs)
-gen_imgs.to_csv("/content/drive/MyDrive/Research/Project 1/insurance_data_without_privacy_8.csv", index = False)
+gen_imgs.to_csv("model.csv", index = False)
 print("stored")
 
 """# with differential privacy
@@ -444,7 +444,7 @@ class GAN():
 
             if epoch % sample_interval == 0:
               # Plot the progress and save model
-              self.generator.save("/content/drive/MyDrive/Research/Project 1/insurance_data_without_privacy_e_3.h5")
+              self.generator.save("model.h5")
               print ("%d [D loss: %f, acc.: %.2f%%] [G loss: %f, corr: %f, MAPD: %f, MSE: %f, MAE: %f]" % (epoch, d_loss[0], 100*d_loss[1], g_loss, corr, MAPD, MSE, MAE))
 
 
