@@ -62,7 +62,7 @@ random.seed(1)
 np.random.seed(1)
 tf.random.set_seed(1)
 
-data = pd.read_csv('/content/drive/MyDrive/Research/Project 1/insurance_data.csv', sep = ',', na_values=['(NA)']).fillna(0)
+data = pd.read_csv('insurance_data.csv', sep = ',', na_values=['(NA)']).fillna(0)
 data = np.array(data)
 data = data.reshape(1262423,9)
 
