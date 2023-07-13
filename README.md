@@ -13,4 +13,4 @@ This repository provides the code for our paper's results.
 ### Privacy attack
 - privacy_attack.py provides the code for replicating our privacy attack with detailed comments.
 
-We recommend using Google Colab with a custom VM from Google Cloud Platform (especially for the privacy attack). Most of the time, we used 64 CPU's and around 60GB of RAM.  
+We recommend using Google Colab with a custom VM from Google Cloud Platform (especially for the privacy attack). Most of the time, we used 64 CPUs and around 120GB of RAM.  
