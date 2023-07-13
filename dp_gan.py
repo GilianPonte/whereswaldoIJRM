@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""DP-GAN.ipynb"""
+"""DP-GAN.py"""
 
 seed=1
 import os
