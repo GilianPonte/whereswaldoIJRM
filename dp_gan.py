@@ -62,7 +62,7 @@ random.seed(1)
 np.random.seed(1)
 tf.random.set_seed(1)
 
-data = pd.read_csv('insurance_data.csv', sep = ',', na_values=['(NA)']).fillna(0)
+data = pd.read_csv('data.csv', sep = ',', na_values=['(NA)']).fillna(0)
 data = np.array(data)
 data = data.reshape(1262423,9)
 
@@ -458,7 +458,7 @@ if __name__ == '__main__':
 
 import numpy as np
 from keras.models import load_model
-generator = load_model('insurance_data_without_privacy_e_3.h5')
+generator = load_model('data_without_privacy_e_3.h5')
 generated_data = []
 random.seed(1)
 np.random.seed(1)
@@ -470,5 +470,5 @@ gen_imgs = gen_imgs.reshape(1262423, 9)
 gen_imgs = pd.DataFrame(gen_imgs)
 gen_imgs = scaler0.inverse_transform(gen_imgs)
 gen_imgs = pd.DataFrame(gen_imgs)
-gen_imgs.to_csv("insurance_data_without_privacy_e_3.csv", index = False)
+gen_imgs.to_csv("data_without_privacy_e_3.csv", index = False)
 print("stored")
