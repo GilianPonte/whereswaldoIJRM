@@ -86,7 +86,7 @@ for iter in range(0,100):
 
   print("iteration is " + str(iter))
 
-  churn = pd.read_csv('insurance_data.csv', sep = ',', na_values=['(NA)']).fillna(0) # read data
+  churn = pd.read_csv('data.csv', sep = ',', na_values=['(NA)']).fillna(0) # read data
   churn = pd.DataFrame.drop_duplicates(churn) # drop duplicates
   # to make 'fair' samples in terms of summary statistics, we apply stratified sampling according to churn variable. The imbalance is bad.
   churn, evaluation_outside_training = train_test_split(churn, train_size = int(samples*2/3), test_size = int(30000), stratify= churn['Churn']) # we make evaluation...training larger to get accurate estimates
@@ -167,7 +167,7 @@ for iter in range(0,100):
   np.random.seed(iter)
   tf.random.set_seed(iter)
 
-  churn = pd.read_csv('insurance_data.csv', sep = ',', na_values=['(NA)']).fillna(0)
+  churn = pd.read_csv('data.csv', sep = ',', na_values=['(NA)']).fillna(0)
   churn = pd.DataFrame.drop_duplicates(churn)
   churn, evaluation_outside_training = train_test_split(churn, train_size = int(samples*2/3), test_size = int(30000), stratify= churn['Churn'])
   train, adversary_training = train_test_split(churn, train_size = int(samples*1/3), stratify= churn['Churn'])
@@ -241,7 +241,7 @@ for iter in range(0,100):
   np.random.seed(iter)
   tf.random.set_seed(iter)
 
-  churn = pd.read_csv('insurance_data.csv', sep = ',', na_values=['(NA)']).fillna(0)
+  churn = pd.read_csv('data.csv', sep = ',', na_values=['(NA)']).fillna(0)
   churn = pd.DataFrame.drop_duplicates(churn)
   churn, evaluation_outside_training = train_test_split(churn, train_size = int(samples*2/3), test_size = int(30000), stratify= churn['Churn'])
   train, adversary_training = train_test_split(churn, train_size = int(samples*1/3), stratify= churn['Churn'])
@@ -329,7 +329,7 @@ for iter in range(0,100):
   np.random.seed(iter)
   tf.random.set_seed(iter)
   print("iteration = " + str(iter))
-  churn = pd.read_csv('insurance_data.csv', sep = ',', na_values=['(NA)']).fillna(0)
+  churn = pd.read_csv('data.csv', sep = ',', na_values=['(NA)']).fillna(0)
   churn = pd.DataFrame.drop_duplicates(churn)
   churn, evaluation_outside_training = train_test_split(churn, train_size = int(samples*2/3), test_size = int(30000), stratify= churn['Churn'])
   train, adversary_training = train_test_split(churn, train_size = int(samples*1/3), stratify= churn['Churn'])
@@ -568,7 +568,7 @@ for iter in range(0,100):
   random.seed(iter)
   np.random.seed(iter)
   tf.random.set_seed(iter)
-  churn = pd.read_csv('insurance_data.csv', sep = ',', na_values=['(NA)']).fillna(0)
+  churn = pd.read_csv('data.csv', sep = ',', na_values=['(NA)']).fillna(0)
   churn = pd.DataFrame.drop_duplicates(churn)
   churn, evaluation_outside_training = train_test_split(churn, train_size = int(samples*2/3), test_size = int(30000), stratify= churn['Churn'])
   train_original, adversary_training = train_test_split(churn, train_size = int(samples*1/3), stratify= churn['Churn'])
@@ -824,7 +824,7 @@ start_time = time.time()
 
 samples = 300
 output_samples = 300 # we always set this to 3000, except with n = 30,000, then 30,000
-churn = pd.read_csv('insurance_data.csv', sep = ',', na_values=['(NA)']).fillna(0)
+churn = pd.read_csv('data.csv', sep = ',', na_values=['(NA)']).fillna(0)
 churn = pd.DataFrame.drop_duplicates(churn)
 print(samples)
 
@@ -877,7 +877,7 @@ for iter in range(100):
   np.random.seed(iter)
   tf.random.set_seed(iter)
   print("iteration is " + str(iter))
-  churn = pd.read_csv('insurance_data.csv', sep = ',', na_values=['(NA)']).fillna(0).sample(frac = 1)
+  churn = pd.read_csv('data.csv', sep = ',', na_values=['(NA)']).fillna(0).sample(frac = 1)
   churn = pd.DataFrame.drop_duplicates(churn)
   churn, evaluation_outside_training = train_test_split(churn, train_size = int(samples*2/3), test_size = int(30000), stratify= churn['Churn'])
   train, adversary_training = train_test_split(churn, train_size = int(samples*1/3), stratify= churn['Churn'])
@@ -1106,7 +1106,7 @@ tf.random.set_seed(1)
 
 samples = [100,1000,10000]
 #samples = [10000]
-churn = pd.read_csv('insurance_data.csv', sep = ',', na_values=['(NA)']).fillna(0)
+churn = pd.read_csv('data.csv', sep = ',', na_values=['(NA)']).fillna(0)
 churn = pd.DataFrame.drop_duplicates(churn)
 churn['id'] = range(len(churn))
 
@@ -1141,7 +1141,7 @@ MAPD_col = np.array([])
 MAE_col = np.array([])
 MSE_col = np.array([])
 samples = [100,1000,10000]
-churn = pd.read_csv('insurance_data.csv', sep = ',', na_values=['(NA)']).fillna(0)
+churn = pd.read_csv('data.csv', sep = ',', na_values=['(NA)']).fillna(0)
 churn = pd.DataFrame.drop_duplicates(churn)
 
 for s in samples:
@@ -1178,7 +1178,7 @@ MAPD_col = np.array([])
 MAE_col = np.array([])
 MSE_col = np.array([])
 samples = [100,1000,10000]
-churn = pd.read_csv('insurance_data.csv', sep = ',', na_values=['(NA)']).fillna(0)
+churn = pd.read_csv('data.csv', sep = ',', na_values=['(NA)']).fillna(0)
 churn = pd.DataFrame.drop_duplicates(churn)
 
 for s in samples:
@@ -1220,7 +1220,7 @@ MAPD_col = np.array([])
 MAE_col = np.array([])
 MSE_col = np.array([])
 samples = [10000]
-churn = pd.read_csv('insurance_data.csv', sep = ',', na_values=['(NA)']).fillna(0)
+churn = pd.read_csv('data.csv', sep = ',', na_values=['(NA)']).fillna(0)
 churn = pd.DataFrame.drop_duplicates(churn)
 
 
@@ -1386,7 +1386,7 @@ np.random.seed(1)
 tf.random.set_seed(1)
 
 samples = [10000]
-churn = pd.read_csv('insurance_data.csv', sep = ',', na_values=['(NA)']).fillna(0)
+churn = pd.read_csv('data.csv', sep = ',', na_values=['(NA)']).fillna(0)
 churn = pd.DataFrame.drop_duplicates(churn)
 
 for s in samples:
@@ -1577,7 +1577,7 @@ tf.random.set_seed(1)
 
 start_time = time.time()
 
-churn = pd.read_csv('insurance_data.csv', sep = ',', na_values=['(NA)']).fillna(0)
+churn = pd.read_csv('data.csv', sep = ',', na_values=['(NA)']).fillna(0)
 churn = pd.DataFrame.drop_duplicates(churn)
 
 epsilons_inf = np.array([])
@@ -1738,7 +1738,7 @@ tf.random.set_seed(1)
 
 start_time = time.time()
 
-churn = pd.read_csv('insurance_data.csv', sep = ',', na_values=['(NA)']).fillna(0)
+churn = pd.read_csv('data.csv', sep = ',', na_values=['(NA)']).fillna(0)
 churn = pd.DataFrame.drop_duplicates(churn)
 
 epsilons_inf = np.array([])
@@ -1845,7 +1845,7 @@ tf.random.set_seed(1)
 
 start_time = time.time()
 
-churn = pd.read_csv('insurance_data.csv', sep = ',', na_values=['(NA)']).fillna(0)
+churn = pd.read_csv('data.csv', sep = ',', na_values=['(NA)']).fillna(0)
 churn = pd.DataFrame.drop_duplicates(churn)
 
 epsilons_inf = np.array([])
