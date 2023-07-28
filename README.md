@@ -11,7 +11,7 @@ This repository provides the code for our paper's results.
 - data_sharing_application.py describes the section _Sharing protected data between departments._ 
 
 ### Pharmaceutical marketing application
-- dp_panelgan.py describes the GAN with self-attention mechanism.
+- dp_panelgan.py describes the GAN with attention mechanism.
   
 ### Privacy attack
 - privacy_attack.py provides the code for replicating our privacy attack with detailed comments.
